@@ -1,0 +1,18 @@
+@import "../variables";
+
+$font: (
+  bold: $primary-bold-font,
+  medium: $primary-medium-font,
+  default: $primary-font,
+  book: $primary-book-font
+);
+
+@function font($variant: default) {
+  $fetched-value: map-get($font, $variant);
+
+  @if ($fetched-value) {
+    @return $fetched-value;
+  } @else {
+    @error 'Font-size variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
+  }
+}

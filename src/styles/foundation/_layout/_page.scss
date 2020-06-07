@@ -1,0 +1,18 @@
+@import '../spacing';
+@import '../variables';
+
+@mixin layout-container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: spacing(extra-loose) 0;
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    max-width: 700px;
+    padding: spacing(extra-loose) 0;
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    max-width: 288px;
+    padding: spacing() 0;
+  }
+}

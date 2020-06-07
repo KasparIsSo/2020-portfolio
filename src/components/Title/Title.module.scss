@@ -1,0 +1,10 @@
+@import 'styles.scss';
+
+.Title {
+  @include type-scale(title);
+  color: color(ink);
+
+  @include dark {
+    color: color(ink, dark);
+  }
+}

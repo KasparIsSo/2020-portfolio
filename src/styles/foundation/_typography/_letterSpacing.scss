@@ -1,0 +1,32 @@
+@import '../utilities';
+
+$letter-spacing: (
+  desktop: (
+    body: 0.1,
+    title: 0.5,
+    heading: 3,
+    display: 5,
+  ),
+  tablet: (
+    body: 0.1,
+    title: 0.5,
+    heading: 2,
+    display: 3.8,
+  ),
+  mobile: (
+    body: 0.1,
+    title: 0.4,
+    heading: 1.8,
+    display: 2,
+  ),
+);
+
+@function letter-spacing($size: desktop, $variant: body) {
+  $fetched-value: map-deep-get($letter-spacing, $size, $variant);
+
+  @if type-of($fetched-value) == number {
+    @return rem($fetched-value);
+  } @else {
+    @error 'Letter spacing variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
+  }
+}

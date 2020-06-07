@@ -1,0 +1,31 @@
+$colors: (
+  ink: (
+    default: #333333,
+    dark: #fff,
+  ),
+  hover: (
+    default: #0000ff,
+    dark: #00e1ff,
+  ),
+  white: (
+    default: #fff,
+  ),
+  background-primary: (
+    default: #fcf3f1,
+    dark: #000,
+  ),
+  background-secondary: (
+    default: #fff,
+    dark: #000,
+  ),
+);
+
+@function color($variant: ink, $sub: default) {
+  $fetched-value: map-deep-get($colors, $variant, $sub);
+
+  @if ($fetched-value) {
+    @return $fetched-value;
+  } @else {
+    @error 'Color variant `#{$variant}` not found.	';
+  }
+}

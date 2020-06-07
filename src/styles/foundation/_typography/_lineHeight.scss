@@ -1,0 +1,32 @@
+@import '../utilities';
+
+$line-height: (
+  desktop: (
+    body: 26,
+    title: 30,
+    heading: 40,
+    display: 60,
+  ),
+  tablet: (
+    body: 26,
+    title: 30,
+    heading: 40,
+    display: 56,
+  ),
+  mobile: (
+    body: 24,
+    title: 30,
+    heading: 32,
+    display: 40,
+  ),
+);
+
+@function line-height($size: desktop, $variant: body) {
+  $fetched-value: map-deep-get($line-height, $size, $variant);
+
+  @if type-of($fetched-value) == number {
+    @return rem($fetched-value);
+  } @else {
+    @error 'Line-height variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
+  }
+}

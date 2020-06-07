@@ -1,0 +1,10 @@
+@import 'styles.scss';
+
+.Heading {
+  @include type-scale(heading);
+  color: color(ink);
+
+  @include dark {
+    color: color(ink, dark);
+  }
+}

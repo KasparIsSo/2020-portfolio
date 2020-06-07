@@ -1,0 +1,32 @@
+@import './variables';
+@import './_typography/font';
+@import './_typography/fontSize';
+@import './_typography/lineHeight';
+@import './_typography/letterSpacing';
+
+@mixin type-scale($scale: body, $font-weight: default) {
+  font: {
+    family: font($font-weight);
+    size: font-size(desktop, $scale);
+  }
+  line-height: line-height(desktop, $scale);
+  letter-spacing: letter-spacing(desktop, $scale);
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    font: {
+      family: font($font-weight);
+      size: font-size(tablet, $scale);
+    }
+    line-height: line-height(tablet, $scale);
+    letter-spacing: letter-spacing(tablet, $scale);
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    font: {
+      family: font($font-weight);
+      size: font-size(mobile, $scale);
+    }
+    line-height: line-height(mobile, $scale);
+    letter-spacing: letter-spacing(mobile, $scale);
+  }
+}

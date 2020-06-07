@@ -1,0 +1,18 @@
+$spacing: (
+  extra-tight: 4,
+  tight: 10,
+  base-tight: 16,
+  base: 20,
+  loose: 32,
+  extra-loose: 40,
+);
+
+@function spacing($variant: base) {
+  $fetched-value: map-get($spacing, $variant);
+
+  @if type-of($fetched-value) == number {
+    @return rem($fetched-value);
+  } @else {
+    @error 'Spacing variant `#{$variant}` not found. Available variants: #{available-names($spacing)}';
+  }
+}

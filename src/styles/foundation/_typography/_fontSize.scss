@@ -1,0 +1,32 @@
+@import '../utilities';
+
+$font-size: (
+  desktop: (
+    body: 16,
+    title: 20,
+    heading: 40,
+    display: 60,
+  ),
+  tablet: (
+    body: 16,
+    title: 20,
+    heading: 32,
+    display: 48,
+  ),
+  mobile: (
+    body: 14,
+    title: 16,
+    heading: 24,
+    display: 32,
+  ),
+);
+
+@function font-size($size: desktop, $variant: body) {
+  $fetched-value: map-deep-get($font-size, $size, $variant);
+
+  @if type-of($fetched-value) == number {
+    @return rem($fetched-value);
+  } @else {
+    @error 'Font-size variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
+  }
+}
