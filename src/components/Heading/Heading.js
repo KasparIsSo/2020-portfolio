@@ -4,6 +4,15 @@ import * as styles from './Heading.module.scss';
 
 export default ({ children }) => {
   const theme = useContext(ThemeContext);
+  const themeVariation = themedClass(theme, styles, 'Heading');
 
-  return <h2 className={themedClass(theme, styles, 'Heading')}>{children}</h2>;
+  const classes = () => {
+    let classNames = styles.Heading;
+    if (themeVariation) {
+      classNames += ` ${themeVariation}`;
+    }
+    return classNames;
+  };
+
+  return <h3 className={classes()}>{children}</h3>;
 };

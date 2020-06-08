@@ -1,8 +1,8 @@
 @import '../utilities';
 
 $breakpoint: (
-  mobile: 540,
-  tablet: 840,
+  mobile: 680,
+  tablet: 960,
   desktop: 1440,
 );
 
@@ -10,7 +10,7 @@ $breakpoint: (
   $fetched-value: map-get($breakpoint, $variant);
 
   @if type-of($fetched-value) == number {
-    @return rem($fetched-value);
+    @return $fetched-value * 1px;
   } @else {
     @error 'Breakpoint variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
   }

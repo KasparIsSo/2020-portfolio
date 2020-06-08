@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
-import { themedClass, ThemeContext } from 'utilities';
+import { fontClass, themedClass, ThemeContext } from 'utilities';
 import * as styles from './Body.module.scss';
 
-export default ({ children }) => {
+export default ({ children, primary }) => {
   const theme = useContext(ThemeContext);
+  const fontVariation = primary ? null : fontClass('secondary', styles, 'Body');
+  const classes = `${styles.Body} ${themedClass(
+    theme,
+    styles,
+    'Body'
+  )} ${fontVariation}`;
 
-  return <h2 className={themedClass(theme, styles, 'Body')}>{children}</h2>;
+  return <p className={classes}>{children}</p>;
 };

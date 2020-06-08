@@ -1,0 +1,48 @@
+{
+  "social": {
+    "title": "Social",
+    "listItems": [
+      {
+        "content": "instagram",
+        "url": "https://www.instagram.com/kasparisso/"
+      },
+      {
+        "content": "twitter",
+        "url": "https://twitter.com/kasparisso"
+      },
+      {
+        "content": "linkedin",
+        "url": "https://www.linkedin.com/in/kasparisso/instagram.com/kasparisso"
+      },
+      {
+        "content": "github",
+        "url": "https://github.com/kasparisso"
+      }
+    ]
+  },
+  "resume": {
+    "title": "Resume",
+    "listItems": [
+      {
+        "content": "2019 - present / Shopify UX Developer",
+        "url": "shopify.com"
+      },
+      {
+        "content": "2015 - 2019 / Freelance",
+        "url": "shopify.com"
+      },
+      {
+        "content": "2018 / Shopify Frontend Intern",
+        "url": "shopify.com"
+      },
+      {
+        "content": "2017 / Toronto Star Developer",
+        "url": "shopify.com"
+      },
+      {
+        "content": "2016 / Feast Interactive Designer",
+        "url": "shopify.com"
+      }
+    ]
+  }
+}

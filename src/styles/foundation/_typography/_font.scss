@@ -1,10 +1,10 @@
-@import "../variables";
+@import '../_utilities/mapDeepGet';
+@import '../variables';
 
 $font: (
-  bold: $primary-bold-font,
-  medium: $primary-medium-font,
   default: $primary-font,
-  book: $primary-book-font
+  primary: $primary-font,
+  secondary: $secondary-font,
 );
 
 @function font($variant: default) {
@@ -13,6 +13,6 @@ $font: (
   @if ($fetched-value) {
     @return $fetched-value;
   } @else {
-    @error 'Font-size variant `#{$variant}` not found. Available variants: #{available-names($spacing-data)}';
+    @error 'Font-size variant `#{$variant}` not found. Available variants: #{available-names($font)}';
   }
 }

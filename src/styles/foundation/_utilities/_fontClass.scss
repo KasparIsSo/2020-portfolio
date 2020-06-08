@@ -1,0 +1,8 @@
+@import '../_typography/font';
+@import '../variables';
+
+@mixin secondary-font {
+  &__secondary {
+    font-family: font(secondary);
+  }
+}

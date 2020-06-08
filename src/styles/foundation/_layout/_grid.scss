@@ -7,12 +7,36 @@
   grid-gap: spacing();
 
   @media screen and (max-width: breakpoint(tablet)) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-gap: spacing();
   }
 
   @media screen and (max-width: breakpoint(mobile)) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: spacing(base-tight);
+  }
+}
+
+@mixin grid-primary-section {
+  grid-column: span 9;
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    grid-column: span 6;
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    grid-column: span 4;
+  }
+}
+
+@mixin grid-secondary-section {
+  grid-column: span 3;
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    grid-column: span 2;
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    grid-column: span 4;
   }
 }

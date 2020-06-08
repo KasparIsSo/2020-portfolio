@@ -5,6 +5,8 @@ $spacing: (
   base: 20,
   loose: 32,
   extra-loose: 40,
+  large: 80,
+  extra-large: 120,
 );
 
 @function spacing($variant: base) {

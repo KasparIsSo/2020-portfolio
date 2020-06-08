@@ -4,4 +4,8 @@
   width: 100%;
   background: color(background-primary);
   min-height: 100vh;
+
+  @include dark {
+    background: color(background-primary, dark);
+  }
 }

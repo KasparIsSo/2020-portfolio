@@ -1,0 +1,63 @@
+{
+  "header": {
+    "breadcrumbs": {
+      "primary": "Kaspar So"
+    },
+    "title": "Playground of a UX developer",
+    "slug": "Born and raised in Toronto"
+  },
+  "work": {
+    "title": "Selected Work",
+    "listItems": [
+      {
+        "title": "University of Toronto Doctoral Website",
+        "slug": "Frontend Development / UI Design / 2018",
+        "path": "/project"
+      },
+      {
+        "title": "University of Toronto Doctoral Website",
+        "slug": "Frontend Development / UI Design / 2018",
+        "path": "/project"
+      },
+      {
+        "title": "University of Toronto Doctoral Website",
+        "slug": "Frontend Development / UI Design / 2018",
+        "path": "/project"
+      },
+      {
+        "title": "University of Toronto Doctoral Website",
+        "slug": "Frontend Development / UI Design / 2018",
+        "path": "/project"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "listItems": [
+      {
+        "title": "Shopify Internship",
+        "slug": "Frontend Development / 2018",
+        "path": "/project"
+      }
+    ]
+  },
+  "experiments": {
+    "title": "Experiments",
+    "listItems": [
+      {
+        "title": "Creative Coding",
+        "slug": "Generative Art / 2018",
+        "path": "/project"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "content": [
+      {
+        "text": "kaspar@kasparso.com",
+        "url": "mailto:kaspar@kasparso.com"
+      }
+    ]
+  }
+}

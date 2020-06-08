@@ -7,4 +7,6 @@
   @include dark {
     color: color(ink, dark);
   }
+
+  @include secondary-font;
 }

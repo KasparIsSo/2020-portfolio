@@ -1,0 +1,13 @@
+@import 'styles.scss';
+
+.Breadcrumbs {
+  @include grid-secondary-section;
+}
+
+.Title {
+  @include grid-primary-section;
+}
+
+.Slug {
+  margin-top: spacing(tight);
+}

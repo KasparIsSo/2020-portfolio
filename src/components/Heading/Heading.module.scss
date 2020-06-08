@@ -3,6 +3,7 @@
 .Heading {
   @include type-scale(heading);
   color: color(ink);
+  text-transform: uppercase;
 
   @include dark {
     color: color(ink, dark);

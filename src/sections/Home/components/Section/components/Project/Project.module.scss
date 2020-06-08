@@ -1,0 +1,8 @@
+@import 'styles.scss';
+
+.Project {
+  display: grid;
+  grid-gap: spacing(tight);
+  padding: spacing() 0;
+  border-top: rem(2) solid color(ink);
+}

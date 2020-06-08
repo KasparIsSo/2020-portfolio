@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 10px;
-}
-
 html,
 body,
 div,
@@ -98,6 +94,12 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+html,
+body {
+  font-size: 10px;
+  scroll-behavior: smooth;
 }
 /* HTML5 display-role reset for older browsers */
 article,

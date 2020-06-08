@@ -1,0 +1,26 @@
+@import 'styles.scss';
+
+.SummarySibling {
+  grid-column: span 4;
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    grid-column: span 3;
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    display: none;
+  }
+}
+
+.Summary {
+  grid-column: span 4;
+  padding-top: spacing(loose);
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    grid-column: span 3;
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    grid-column: span 4;
+  }
+}
