@@ -3,4 +3,5 @@
 .CalloutPrimary {
   @include grid-primary-section;
   background: color(background-inverse);
+  color: color(white);
 }

@@ -5,7 +5,7 @@ import {
   Route,
   useRouteMatch,
 } from 'react-router-dom';
-
+import { themeEnum } from './enums';
 import { themedClass, ThemeProvider } from 'utilities';
 import { Home, Project } from 'sections';
 
@@ -15,13 +15,13 @@ export default function App() {
   const storedTheme = () =>
     window.localStorage.getItem('kaspar-so-portfolio-theme')
       ? window.localStorage.getItem('kaspar-so-portfolio-theme')
-      : 'light';
+      : themeEnum.LIGHT;
 
   const [theme] = useState(storedTheme);
 
   useEffect(() => {
     window.localStorage.setItem('shipping-prototype-test-orders', theme);
-    if (theme === 'light') {
+    if (theme === themeEnum.LIGHT) {
       document.body.style.backgroundColor = '#fcf3f1';
     } else {
       document.body.style.backgroundColor = '#000';

@@ -1,1 +1,5 @@
 @import 'styles.scss';
+
+.BlockSplitPrimary {
+  @include grid-content-primary-section;
+}
