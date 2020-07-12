@@ -20,7 +20,7 @@ export default ({ content }) => {
   function listItemMarkup(listItems) {
     return listItems.map((listItem, index) => (
       <li key={index}>
-        <Link href={listItem.url} external>
+        <Link href={listItem.url} external autoWidth>
           <Body primary>{listItem.content}</Body>
         </Link>
       </li>

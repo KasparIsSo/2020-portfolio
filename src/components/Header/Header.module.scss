@@ -2,6 +2,9 @@
 
 .Breadcrumbs {
   @include grid-secondary-section;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .Title {

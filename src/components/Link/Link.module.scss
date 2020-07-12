@@ -5,7 +5,24 @@
 .Link:visited,
 .Link:active {
   text-decoration: none;
+  display: block;
   cursor: pointer;
+
+  &.AutoWidth {
+    display: inline-block;
+  }
+
+  &:focus {
+    position: relative;
+    outline: rem(2) solid color(hover);
+
+    div {
+      border-top: rem(2) solid transparent;
+    }
+    // * {
+    //   border-color: color(hover);
+    // }
+  }
 
   &:hover {
     h1,
@@ -21,7 +38,9 @@
   }
 
   @include dark {
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       h1,
       h2,
       h3,

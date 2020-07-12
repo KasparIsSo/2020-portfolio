@@ -1,1 +1,1 @@
-export { default as Projects } from './Projects';
+export { universityOfTorontoContent } from './university-of-toronto-website';

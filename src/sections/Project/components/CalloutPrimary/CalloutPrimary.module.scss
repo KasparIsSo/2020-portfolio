@@ -1,0 +1,6 @@
+@import 'styles.scss';
+
+.CalloutPrimary {
+  @include grid-primary-section;
+  background: color(background-inverse);
+}

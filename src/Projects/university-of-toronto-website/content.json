@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "University of Toronto Doctoral Website"
+  },
+  "sections": [
+    {
+      "title": "Overview",
+      "sectionType": "primaryCallout",
+      "layout": "split",
+      "blocks": [
+        {
+          "type": "split",
+          "subtype": "primary",
+          "content": "I was approached with an opportunity to design and build a university doctoral program website. To my surprise, there was no visual guidelines that I had to adhere to. Furthermore I was explicitly asked to make it look modern and as exciting as the clients were about this new program"
+        },
+        {
+          "type": "split",
+          "subtype": "secondary",
+          "content": [
+            {
+              "title": "Role",
+              "content": "Frontend Developer Intern"
+            },
+            {
+              "title": "Duration",
+              "content": "May - August 2018"
+            },
+            {
+              "title": "Tools",
+              "content": "HTML, CSS, JS, Ruby on Rails, Node.js, GitHub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

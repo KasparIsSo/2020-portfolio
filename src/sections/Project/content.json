@@ -1,7 +1,8 @@
 {
   "header": {
-    "breadcrumbs": {
-      "primary": "Kaspar So"
+    "breadcrumb": {
+      "parent": "Projects",
+      "link": "/#projects"
     },
     "title": "Playground of a UX developer",
     "slug": "Born and raised in Toronto"

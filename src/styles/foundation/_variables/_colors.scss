@@ -18,6 +18,10 @@ $colors: (
     default: #fff,
     dark: #000,
   ),
+  background-inverse: (
+    default: #000,
+    dark: #fff,
+  ),
 );
 
 @function color($variant: ink, $sub: default) {

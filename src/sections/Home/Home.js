@@ -7,7 +7,6 @@ import * as styles from './Home.module.scss';
 
 export default () => {
   const headerProps = {
-    breadcrumbs: { primary: content.header.breadcrumbs.primary },
     title: content.header.title,
     slug: content.header.slug,
   };

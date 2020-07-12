@@ -1,27 +1,37 @@
 import React from 'react';
 
-import { Body, Display, Title } from 'components';
+import { Body, Display, Link, Title } from 'components';
+import content from './content.json';
+
 import * as styles from './Header.module.scss';
 
 export default ({ props }) => {
   return (
     <>
       <div className={styles.Breadcrumbs}>
-        <Title>{props.breadcrumbs.primary}</Title>
+        <Link to='/' autoWidth>
+          <Title>{content.header.title}</Title>
+        </Link>
         {breadcrumbMarkup()}
       </div>
       <div className={styles.Title}>
         <Display>{props.title}</Display>
-        <div className={styles.Slug}>
-          <Body>{props.slug}</Body>
-        </div>
+        {props.slug && (
+          <div className={styles.Slug}>
+            <Body>{props.slug}</Body>
+          </div>
+        )}
       </div>
     </>
   );
 
   function breadcrumbMarkup() {
-    if (props.breadcrumbs.link) {
-      return <p>go back</p>;
+    if (props.breadcrumb) {
+      return (
+        <Link to={props.breadcrumb.link}>
+          <Body>{props.breadcrumb.parent}</Body>
+        </Link>
+      );
     }
   }
 };

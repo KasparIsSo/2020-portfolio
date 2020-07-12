@@ -5,6 +5,10 @@
   margin-top: spacing(large);
   display: grid;
   grid-gap: spacing();
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    margin-top: spacing(extra-loose);
+  }
 }
 
 .ContactContent {
