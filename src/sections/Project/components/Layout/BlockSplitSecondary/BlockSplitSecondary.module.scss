@@ -1,1 +1,26 @@
 @import 'styles.scss';
+
+.BlockSplitSecondary {
+  @include grid-content-secondary-section;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: spacing();
+  // padding: 0 spacing();
+
+  @media screen and (max-width: breakpoint(tablet)) {
+  }
+
+  @media screen and (max-width: breakpoint(mobile)) {
+    grid-gap: spacing(base-tight);
+  }
+}
+
+.Block {
+  display: flex;
+  flex-direction: column;
+
+  :not(:first-child) {
+    margin-top: spacing(extra-tight);
+  }
+}

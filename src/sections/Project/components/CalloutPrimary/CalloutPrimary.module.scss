@@ -1,7 +1,45 @@
 @import 'styles.scss';
 
+@function leftPsuedoWidth($size) {
+  $result: rem($size) - 11 * spacing();
+  $result: $result / 11;
+  @return $result;
+}
+
 .CalloutPrimary {
   @include grid-primary-section;
   background: color(background-inverse);
-  color: color(white);
+  padding-top: spacing(extra-large);
+  padding-bottom: spacing(extra-loose);
+  margin-top: calc(60% - #{spacing(extra-large)});
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1 * (leftPsuedoWidth($desktop-max-width) + spacing());
+    height: 100%;
+    width: leftPsuedoWidth($desktop-max-width) + spacing();
+    background: color(background-inverse);
+
+    @media screen and (max-width: breakpoint(tablet)) {
+      left: -1 * spacing();
+      width: spacing();
+    }
+
+    @media screen and (max-width: breakpoint(mobile)) {
+      display: none;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: calc((100vw - #{rem($desktop-max-width)}) * -0.5);
+    height: 100%;
+    width: calc((100vw - #{rem($desktop-max-width)}) * 0.5);
+    background: color(background-inverse);
+  }
 }

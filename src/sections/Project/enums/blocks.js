@@ -16,6 +16,7 @@ export const blockTextSubtypeEnum = {
 };
 
 export const blockImageSubtypeEnum = {
+  CALLOUT: 'callout',
   FULL: 'full',
   HALF: 'half',
 };

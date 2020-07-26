@@ -1,10 +1,17 @@
 import React, { useContext } from 'react';
-import { fontClass, themedClass, ThemeContext } from 'utilities';
+import { fontClass, inverseTheme, themedClass, ThemeContext } from 'utilities';
 import * as styles from './Title.module.scss';
 
-export default ({ children, secondary }) => {
+export default ({ children, secondary, inverse }) => {
   const theme = useContext(ThemeContext);
-  const themeVariation = themedClass(theme, styles, 'Title');
+  let themeVariation;
+
+  if (!inverse) {
+    themeVariation = themedClass(theme, styles, 'Title');
+  } else {
+    themeVariation = themedClass(inverseTheme(theme), styles, 'Title');
+  }
+
   const fontVariation = secondary
     ? fontClass('secondary', styles, 'Title')
     : null;

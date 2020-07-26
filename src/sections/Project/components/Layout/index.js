@@ -1,3 +1,4 @@
+export { BlockImageCallout } from './BlockImageCallout';
 export { BlockImageFull } from './BlockImageFull';
 export { BlockImageHalf } from './BlockImageHalf';
 export { BlockListFull } from './BlockListFull';

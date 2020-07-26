@@ -9,9 +9,11 @@ export default ({ content }) => {
   function blockMarkup(contentArray) {
     return contentArray.map((contentItem) => {
       return (
-        <div>
-          <Heading inverse>{contentItem.title}</Heading>
-          <Body>{contentItem.content}</Body>
+        <div className={styles.Block}>
+          <Heading capitalize inverse>
+            {contentItem.title}
+          </Heading>
+          <Body inverse>{contentItem.content}</Body>
         </div>
       );
     });

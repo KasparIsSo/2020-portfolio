@@ -14,7 +14,6 @@
 
 .Summary {
   grid-column: span 4;
-  padding-top: spacing(loose);
 
   @media screen and (max-width: breakpoint(tablet)) {
     grid-column: span 3;
@@ -22,6 +21,5 @@
 
   @media screen and (max-width: breakpoint(mobile)) {
     grid-column: span 4;
-    padding-top: spacing();
   }
 }

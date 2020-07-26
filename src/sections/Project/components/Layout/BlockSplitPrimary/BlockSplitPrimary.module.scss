@@ -3,3 +3,12 @@
 .BlockSplitPrimary {
   @include grid-content-primary-section;
 }
+
+.Block {
+  display: flex;
+  flex-direction: column;
+
+  :not(:first-child) {
+    margin-top: spacing(tight);
+  }
+}

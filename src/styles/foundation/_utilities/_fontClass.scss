@@ -1,6 +1,12 @@
 @import '../_typography/font';
 @import '../variables';
 
+@mixin primary-font {
+  &__primary {
+    font-family: font(primary);
+  }
+}
+
 @mixin secondary-font {
   &__secondary {
     font-family: font(secondary);

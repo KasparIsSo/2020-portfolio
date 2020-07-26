@@ -2,7 +2,6 @@
 
 .PageNav {
   grid-column: span 3;
-  padding-top: spacing(loose);
   @media screen and (max-width: breakpoint(tablet)) {
     grid-column: span 2;
   }

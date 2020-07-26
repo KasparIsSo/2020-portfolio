@@ -8,6 +8,7 @@ import {
   blockListSubtypeEnum,
 } from '../enums';
 import {
+  BlockImageCallout,
   BlockImageFull,
   BlockImageHalf,
   BlockListFull,
@@ -52,6 +53,8 @@ export function BlockMapper({ blocks }) {
           return BlockImageFull;
         } else if (blockSubtype === blockImageSubtypeEnum.HALF) {
           return BlockImageHalf;
+        } else if (blockSubtype === blockImageSubtypeEnum.CALLOUT) {
+          return BlockImageCallout;
         } else {
           return;
         }

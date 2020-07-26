@@ -29,7 +29,7 @@ export default ({ props }) => {
     if (props.breadcrumb) {
       return (
         <Link to={props.breadcrumb.link}>
-          <Body>{props.breadcrumb.parent}</Body>
+          <Body primary>⟵ {props.breadcrumb.parent}</Body>
         </Link>
       );
     }

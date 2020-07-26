@@ -3,15 +3,15 @@
 
 @mixin layout-container {
   margin: 0 auto;
-  max-width: 1080px;
-  padding: spacing(extra-loose);
+  max-width: rem($desktop-max-width);
+  padding: spacing(extra-loose) 0;
 
   @media screen and (max-width: breakpoint(tablet)) {
-    max-width: 880px;
-    padding: spacing(extra-loose);
+    max-width: rem($tablet-max-width);
+    padding: spacing(extra-loose) 0;
   }
 
   @media screen and (max-width: breakpoint(mobile)) {
-    padding: spacing();
+    padding: spacing() 0;
   }
 }

@@ -5,6 +5,10 @@
   color: color(ink);
   text-transform: uppercase;
 
+  &.Capitalize {
+    text-transform: capitalize;
+  }
+
   @include dark {
     color: color(ink, dark);
   }

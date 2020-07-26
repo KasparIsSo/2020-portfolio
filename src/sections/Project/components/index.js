@@ -1,5 +1,6 @@
 export { CalloutPrimary } from './CalloutPrimary';
 export {
+  BlockImageCallout,
   BlockImageFull,
   BlockImageHalf,
   BlockListFull,

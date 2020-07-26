@@ -1,0 +1,10 @@
+@import 'styles.scss';
+
+.BlockImageCallout {
+  @include grid-content-full-section;
+  padding-top: 60%;
+  margin-top: -60%;
+  background: red;
+  width: 100%;
+  margin-bottom: spacing();
+}

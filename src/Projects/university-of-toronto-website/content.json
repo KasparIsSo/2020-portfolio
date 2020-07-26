@@ -9,6 +9,12 @@
       "layout": "split",
       "blocks": [
         {
+          "type": "image",
+          "subtype": "callout",
+          "url": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+          "altText": "MACS website UI displayed across three different layouts"
+        },
+        {
           "type": "split",
           "subtype": "primary",
           "content": [

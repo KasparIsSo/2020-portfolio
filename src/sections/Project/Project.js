@@ -23,8 +23,6 @@ export default () => {
     <Layout>
       <Header props={headerProps}></Header>
       <PageNav sections={sections} rows={sections.length + 1} />
-      <div>Hello</div>
-      <div>{projectId}</div>
       {contentMarkup()}
     </Layout>
   );
