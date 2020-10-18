@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Body, Display, Link, Title } from 'components';
+import { Body, Display, Link, Title, ToggleDarkMode } from 'components';
 import content from './content.json';
 
 import * as styles from './Header.module.scss';
@@ -9,9 +9,16 @@ export default ({ props }) => {
   return (
     <>
       <div className={styles.Breadcrumbs}>
-        <Link to='/' autoWidth>
-          <Title>{content.header.title}</Title>
-        </Link>
+        <div className={styles.TopSection}>
+          <div>
+            <Link to='/' autoWidth>
+              <Title>{content.header.title}</Title>
+            </Link>
+          </div>
+          <div>
+            <ToggleDarkMode />
+          </div>
+        </div>
         {breadcrumbMarkup()}
       </div>
       <div className={styles.Title}>

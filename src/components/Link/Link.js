@@ -4,7 +4,7 @@ import { themedClass, ThemeContext } from 'utilities';
 import * as styles from './Link.module.scss';
 
 export default ({ children, href, external, to, nav, autoWidth }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const themeVariation = themedClass(theme, styles, 'Link');
   const classes = () => {
     let classNames = styles.Link;

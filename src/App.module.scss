@@ -4,6 +4,9 @@
   width: 100%;
   background: color(background-primary);
   min-height: 100vh;
+  padding: spacing();
+  transition-property: background;
+  @include default-transition;
 
   @include dark {
     background: color(background-primary, dark);

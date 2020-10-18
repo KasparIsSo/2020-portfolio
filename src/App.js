@@ -1,36 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useRouteMatch,
 } from 'react-router-dom';
-import { themeEnum } from './enums';
-import { themedClass, ThemeProvider } from 'utilities';
+import { themedClass, ThemeProvider, useDarkMode } from 'utilities';
 import { Home, Project } from 'sections';
 
 import * as styles from './App.module.scss';
 
 export default function App() {
-  const storedTheme = () =>
-    window.localStorage.getItem('kaspar-so-portfolio-theme')
-      ? window.localStorage.getItem('kaspar-so-portfolio-theme')
-      : themeEnum.LIGHT;
-
-  const [theme] = useState(storedTheme);
-
-  useEffect(() => {
-    window.localStorage.setItem('shipping-prototype-test-orders', theme);
-    if (theme === themeEnum.LIGHT) {
-      document.body.style.backgroundColor = '#fcf3f1';
-    } else {
-      document.body.style.backgroundColor = '#000';
-    }
-  }, [theme]);
-
-  const themeVariation = themedClass(theme, styles, 'AppWrapper');
+  const { theme, mountedComponent } = useDarkMode();
+  const [themeMode, setThemeMode] = useState(theme);
 
   const appWrapperClasses = () => {
+    const themeVariation = themedClass(themeMode, styles, 'AppWrapper');
     let classNames = styles.AppWrapper;
     if (themeVariation) {
       classNames += ` ${themeVariation}`;
@@ -38,8 +23,10 @@ export default function App() {
     return classNames;
   };
 
+  if (!mountedComponent) return <div />;
+
   return (
-    <ThemeProvider value={theme}>
+    <ThemeProvider value={{ theme: themeMode, setTheme: setThemeMode }}>
       <div className={appWrapperClasses()}>
         <Router>
           <Switch>

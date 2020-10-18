@@ -3,7 +3,7 @@ import { inverseTheme, themedClass, ThemeContext } from 'utilities';
 import * as styles from './Heading.module.scss';
 
 export default ({ children, capitalize, inverse = false }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   let themeVariation;
 
   if (!inverse) {

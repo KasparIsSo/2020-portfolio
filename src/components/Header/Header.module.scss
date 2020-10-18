@@ -7,6 +7,11 @@
   justify-content: space-between;
 }
 
+.TopSection {
+  display: flex;
+  flex-direction: column;
+}
+
 .Title {
   @include grid-primary-section;
 }

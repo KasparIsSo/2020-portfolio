@@ -3,7 +3,7 @@ import { fontClass, inverseTheme, themedClass, ThemeContext } from 'utilities';
 import * as styles from './Body.module.scss';
 
 export default ({ children, primary, inverse = false }) => {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   let themeVariation;
 
   if (!inverse) {

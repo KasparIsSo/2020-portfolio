@@ -1,0 +1,19 @@
+@import 'styles.scss';
+
+.Button {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  // &:active {
+  //   outline: none;
+  // }
+
+  &:focus {
+    outline: rem(2) solid color(hover);
+  }
+}

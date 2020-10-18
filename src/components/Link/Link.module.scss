@@ -12,18 +12,6 @@
     display: inline-block;
   }
 
-  &:focus {
-    position: relative;
-    outline: rem(2) solid color(hover);
-
-    div {
-      border-top: rem(2) solid transparent;
-    }
-    // * {
-    //   border-color: color(hover);
-    // }
-  }
-
   &:hover {
     h1,
     h2,
@@ -52,5 +40,18 @@
         color: color(hover, dark);
       }
     }
+  }
+}
+
+a:focus {
+  position: relative;
+  outline: rem(2) solid color(hover);
+
+  &:active {
+    outline: none;
+  }
+
+  div {
+    border-top: rem(2) solid transparent;
   }
 }

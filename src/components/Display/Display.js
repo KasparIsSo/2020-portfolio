@@ -3,7 +3,7 @@ import { themedClass, ThemeContext } from 'utilities';
 import * as styles from './Display.module.scss';
 
 export default ({ children }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const themeVariation = themedClass(theme, styles, 'Display');
 
