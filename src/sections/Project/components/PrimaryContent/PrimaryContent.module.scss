@@ -1,33 +1,34 @@
 @import 'styles.scss';
 
+@function oneColumnWidth($totalColumns, $maxWidth: null, $withSpacing: true) {
+  $pageSpacing: ($totalColumns - 1) * $gridGap;
+  @if (type-of($maxWidth) == number) {
+    $maxWidth: rem($maxWidth);
+  } @else {
+    $maxWidth: 100vw;
+    $pageSpacing: $pageSpacing + 2 * $appSpacing;
+  }
+  $result: calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns};
+
+  @if ($withSpacing) {
+    $result: calc(#{$result} + #{$gridGap});
+  }
+
+  @return $result;
+}
+
 @function leftPsuedoWidth($totalColumns, $leftOverColumns: 0, $maxWidth: null) {
   $result: spacing();
   @if (type-of($maxWidth) == number) {
-    $maxWidth: rem($maxWidth);
     @if $totalColumns != 4 {
-      $pageSpacing: ($totalColumns - 1) * spacing();
       $result: calc(
-        #{$leftOverColumns +
-          1} *
-          calc(
-            calc(#{$maxWidth} - #{$pageSpacing}) /
-              #{$totalColumns} +
-              #{spacing()}
-          )
+        #{$leftOverColumns + 1} * #{oneColumnWidth($totalColumns, $maxWidth)}
       );
     }
   } @else {
-    $maxWidth: 100vw;
     @if $totalColumns != 4 {
-      $pageSpacing: 2 * spacing(extra-loose) + ($totalColumns - 1) * spacing();
       $result: calc(
-        #{$leftOverColumns +
-          1} *
-          calc(
-            calc(#{$maxWidth} - #{$pageSpacing}) /
-              #{$totalColumns} +
-              #{spacing()}
-          )
+        #{$leftOverColumns} * #{oneColumnWidth($totalColumns, $maxWidth)}
       );
     }
   }
@@ -54,25 +55,39 @@
     left: calc(-1 * #{leftPsuedoWidth(12, 3, $desktop-max-width)});
     width: #{leftPsuedoWidth(12, 3, $desktop-max-width)};
 
-    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, extra-loose))) {
-      left: calc(-1 * (#{leftPsuedoWidth(12, 3)}));
-      width: #{leftPsuedoWidth(12, 3)};
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, base))) {
+      left: calc(-1 * (#{leftPsuedoWidth(12, 3)} + #{$appSpacing}));
+      width: calc(#{leftPsuedoWidth(12, 3)} + #{$appSpacing});
     }
 
     @media screen and (max-width: breakpoint(tablet)) {
-      left: calc(-1 * (#{leftPsuedoWidth(8, 2)}));
-      width: #{leftPsuedoWidth(8, 2)};
+      left: calc(-1 * (#{leftPsuedoWidth(8, 2)} + #{$appSpacing}));
+      width: calc(#{leftPsuedoWidth(8, 2)} + #{$appSpacing});
     }
 
     @media screen and (max-width: breakpoint(mobile)) {
-      left: -1 * spacing();
-      width: spacing();
+      left: -1 * $appSpacing;
+      width: $appSpacing;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: color(background-secondary);
+
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, base))) {
+      right: -1 * $appSpacing;
+      width: $appSpacing;
     }
   }
 
   @include dark {
     background: color(background-secondary, dark);
-    &:before {
+    &:before,
+    &:after {
       background: color(background-secondary, dark);
     }
   }

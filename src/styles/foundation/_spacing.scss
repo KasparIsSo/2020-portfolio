@@ -18,3 +18,5 @@ $spacing: (
     @error 'Spacing variant `#{$variant}` not found. Available variants: #{available-names($spacing)}';
   }
 }
+
+$appSpacing: spacing();

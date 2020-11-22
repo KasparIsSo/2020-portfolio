@@ -4,6 +4,7 @@ import {
   CalloutPrimary,
   PrimaryContent,
   SecondaryContent,
+  FullWidthContent,
 } from '../components';
 import { sectionEnum } from '../enums';
 
@@ -20,6 +21,8 @@ export function SectionMapper({ section }) {
         return PrimaryContent;
       case sectionEnum.CONTENT_SECONDARY:
         return SecondaryContent;
+      case sectionEnum.CONTENT_FULL_WIDTH:
+        return FullWidthContent;
       default:
         break;
     }

@@ -1,21 +1,21 @@
 @import 'styles.scss';
 
 @function leftPsuedoWidth($totalColumns, $maxWidth: null) {
-  $result: spacing();
+  $result: $appSpacing;
   @if (type-of($maxWidth) == number) {
     $maxWidth: rem($maxWidth);
     @if $totalColumns != 4 {
-      $pageSpacing: ($totalColumns - 1) * spacing();
+      $pageSpacing: ($totalColumns - 1) * $gridGap;
       $result: calc(
-        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{spacing()}
+        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{$gridGap}
       );
     }
   } @else {
     $maxWidth: 100vw;
     @if $totalColumns != 4 {
-      $pageSpacing: 2 * spacing(extra-loose) + ($totalColumns - 1) * spacing();
+      $pageSpacing: 2 * $appSpacing + ($totalColumns - 1) * $gridGap;
       $result: calc(
-        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{spacing()}
+        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{$gridGap}
       );
     }
   }
@@ -47,8 +47,8 @@
     }
 
     @media screen and (max-width: breakpoint(tablet)) {
-      left: -1 * spacing();
-      width: spacing();
+      left: -1 * $appSpacing;
+      width: $appSpacing;
     }
   }
 
@@ -62,8 +62,8 @@
     width: calc(0.5 * (100vw - #{$desktop-max-width * 1px}));
 
     @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, extra-loose))) {
-      right: -1 * spacing();
-      width: spacing();
+      right: -1 * $appSpacing;
+      width: $appSpacing;
     }
   }
 

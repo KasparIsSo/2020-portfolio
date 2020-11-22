@@ -15,4 +15,5 @@ export const sectionEnum = {
   CONTENT: 'content',
   CONTENT_PRIMARY: 'primaryContent',
   CONTENT_SECONDARY: 'secondaryContent',
+  CONTENT_FULL_WIDTH: 'fullWidthContent',
 };

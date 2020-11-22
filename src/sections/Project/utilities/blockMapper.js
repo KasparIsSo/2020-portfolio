@@ -22,7 +22,10 @@ import {
   BlockWrapper,
 } from '../components';
 
-export function BlockMapper({ blocks }) {
+export function BlockMapper({ blocks, Wrapper = null }) {
+  if (Wrapper) {
+    return <Wrapper>{mapBlocks()}</Wrapper>;
+  }
   return <BlockWrapper>{mapBlocks()}</BlockWrapper>;
 
   function mapBlocks() {

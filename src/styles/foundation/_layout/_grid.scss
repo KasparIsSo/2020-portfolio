@@ -1,19 +1,22 @@
 @import '../spacing';
 @import '../variables';
 
+$gridGap: spacing();
+$gridGapMobile: spacing(base-tight);
+
 @mixin grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: spacing();
+  grid-gap: $gridGap;
 
   @media screen and (max-width: breakpoint(tablet)) {
     grid-template-columns: repeat(8, 1fr);
-    grid-gap: spacing();
+    grid-gap: $gridGap;
   }
 
   @media screen and (max-width: breakpoint(mobile)) {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: spacing(base-tight);
+    grid-gap: $gridGapMobile;
   }
 }
 
@@ -44,16 +47,16 @@
 @mixin grid-content-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-gap: spacing();
+  grid-gap: $gridGap;
 
   @media screen and (max-width: breakpoint(tablet)) {
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: spacing();
+    grid-gap: $gridGap;
   }
 
   @media screen and (max-width: breakpoint(mobile)) {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: spacing(base-tight);
+    grid-gap: $gridGapMobile;
   }
 }
 
