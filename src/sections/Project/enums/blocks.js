@@ -3,6 +3,7 @@ export const blockEnum = {
   TEXT: 'text',
   IMAGE: 'image',
   LIST: 'list',
+  QUOTE: 'quote',
 };
 
 export const blockSplitSubtypeEnum = {
@@ -22,6 +23,11 @@ export const blockImageSubtypeEnum = {
 };
 
 export const blockListSubtypeEnum = {
+  FULL: 'full',
+  HALF: 'half',
+};
+
+export const blockQuoteSubtypeEnum = {
   FULL: 'full',
   HALF: 'half',
 };

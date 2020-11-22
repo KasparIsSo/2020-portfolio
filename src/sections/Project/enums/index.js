@@ -6,4 +6,5 @@ export {
   blockTextSubtypeEnum,
   blockImageSubtypeEnum,
   blockListSubtypeEnum,
+  blockQuoteSubtypeEnum,
 } from './blocks';

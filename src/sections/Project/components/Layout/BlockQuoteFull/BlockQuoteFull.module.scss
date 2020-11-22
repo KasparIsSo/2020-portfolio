@@ -1,0 +1,16 @@
+@import 'styles.scss';
+
+.BlockQuoteFull {
+  @include grid-content-full-section;
+  margin-top: spacing();
+  padding: spacing() spacing(extra-loose);
+}
+
+.Block {
+  display: flex;
+  flex-direction: column;
+
+  :not(:first-child) {
+    margin-top: spacing(tight);
+  }
+}

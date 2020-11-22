@@ -2,6 +2,16 @@
   "header": {
     "title": "University of Toronto Doctoral Website"
   },
+  "projectNav": [
+    "Overview",
+    "Problem",
+    "Research",
+    "Goals",
+    "Branding",
+    "Solution",
+    "Responsive",
+    "Moving Forward"
+  ],
   "sections": [
     {
       "sectionType": "primaryCallout",
@@ -64,6 +74,13 @@
           }
         },
         {
+          "type": "quote",
+          "subtype": "full",
+          "content": {
+            "content": "“Students want the important information as fast as possible.”"
+          }
+        },
+        {
           "type": "list",
           "subtype": "full",
           "content": {
@@ -101,6 +118,19 @@
           "content": {
             "title": "Branding",
             "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
+        }
+      ]
+    },
+    {
+      "sectionType": "fullWidthContent",
+      "blocks": [
+        {
+          "type": "image",
+          "subtype": "callout",
+          "content": {
+            "imageUrl": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "altText": "MACS website UI displayed across three different layouts"
           }
         }
       ]

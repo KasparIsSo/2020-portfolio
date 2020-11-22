@@ -6,6 +6,7 @@ import {
   blockTextSubtypeEnum,
   blockImageSubtypeEnum,
   blockListSubtypeEnum,
+  blockQuoteSubtypeEnum,
 } from '../enums';
 import {
   BlockImageCallout,
@@ -13,6 +14,7 @@ import {
   BlockImageHalf,
   BlockListFull,
   BlockListHalf,
+  BlockQuoteFull,
   BlockSplitPrimary,
   BlockSplitSecondary,
   BlockTextFull,
@@ -63,6 +65,14 @@ export function BlockMapper({ blocks }) {
           return BlockListFull;
         } else if (blockSubtype === blockListSubtypeEnum.HALF) {
           return BlockListHalf;
+        } else {
+          return;
+        }
+      case blockEnum.QUOTE:
+        if (blockSubtype === blockQuoteSubtypeEnum.FULL) {
+          return BlockQuoteFull;
+        } else if (blockSubtype === blockQuoteSubtypeEnum.HALF) {
+          return BlockQuoteFull;
         } else {
           return;
         }

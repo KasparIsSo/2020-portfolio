@@ -5,7 +5,9 @@ import * as styles from './BlockSplitPrimary.module.scss';
 
 export default ({ content }) => {
   return (
-    <section className={styles.BlockSplitPrimary}>{blockMarkup()}</section>
+    <section className={styles.BlockSplitPrimary} id={content.title}>
+      {blockMarkup()}
+    </section>
   );
 
   function blockMarkup() {

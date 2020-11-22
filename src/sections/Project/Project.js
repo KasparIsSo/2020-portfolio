@@ -17,7 +17,7 @@ export default () => {
     title: project.header.title,
   };
 
-  const sections = ['About', 'Work', 'Experience', 'Experiments', 'Contact'];
+  const sections = project.projectNav;
 
   return (
     <Layout>

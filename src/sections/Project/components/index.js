@@ -7,6 +7,7 @@ export {
   BlockImageHalf,
   BlockListFull,
   BlockListHalf,
+  BlockQuoteFull,
   BlockSplitPrimary,
   BlockSplitSecondary,
   BlockTextFull,

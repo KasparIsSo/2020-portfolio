@@ -4,7 +4,11 @@ import { Heading, List } from 'components';
 import * as styles from './BlockListFull.module.scss';
 
 export default ({ content }) => {
-  return <section className={styles.BlockListFull}>{blockMarkup()}</section>;
+  return (
+    <section className={styles.BlockListFull} id={content.title}>
+      {blockMarkup()}
+    </section>
+  );
 
   function blockMarkup() {
     return (

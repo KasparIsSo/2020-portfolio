@@ -1,0 +1,13 @@
+@import 'styles.scss';
+
+.Quote {
+  @include type-scale(title);
+  color: color(hover);
+  font-style: italic;
+
+  @include dark {
+    color: color(hover, dark);
+  }
+
+  @include secondary-font;
+}
