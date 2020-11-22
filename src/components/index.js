@@ -4,6 +4,7 @@ export { Header } from './Header';
 export { Heading } from './Heading';
 export { Layout } from './Layout';
 export { Link } from './Link';
+export { List } from './List';
 export { PageNav } from './PageNav';
 export { Title } from './Title';
 export { ToggleDarkMode } from './ToggleDarkMode';

@@ -1,1 +1,15 @@
 @import 'styles.scss';
+
+.BlockTextFull {
+  @include grid-content-full-section;
+  margin-top: spacing();
+}
+
+.Block {
+  display: flex;
+  flex-direction: column;
+
+  :not(:first-child) {
+    margin-top: spacing(tight);
+  }
+}

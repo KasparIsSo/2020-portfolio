@@ -1,0 +1,28 @@
+@import 'styles.scss';
+
+.List {
+  margin-top: spacing();
+
+  ul {
+    margin-top: spacing(tight);
+  }
+}
+
+.ListItem {
+  position: relative;
+  @include type-scale(body);
+  color: color(ink);
+  margin-top: spacing(extra-tight);
+
+  @include dark {
+    color: color(ink, dark);
+  }
+
+  @include secondary-font;
+
+  &:before {
+    content: '–';
+    position: absolute;
+    left: -1 * spacing(base-tight);
+  }
+}

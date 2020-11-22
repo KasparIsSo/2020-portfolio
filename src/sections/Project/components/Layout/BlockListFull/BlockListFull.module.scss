@@ -1,1 +1,11 @@
 @import 'styles.scss';
+
+.BlockListFull {
+  @include grid-content-full-section;
+  margin-top: spacing();
+}
+
+.Block {
+  display: flex;
+  flex-direction: column;
+}

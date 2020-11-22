@@ -3,27 +3,21 @@ import { inverseTheme, themedClass, ThemeContext } from 'utilities';
 import * as styles from './Heading.module.scss';
 
 export default ({ children, capitalize, inverse = false }) => {
-  const {theme} = useContext(ThemeContext);
-  let themeVariation;
+  const { theme } = useContext(ThemeContext);
+
+  let classes;
 
   if (!inverse) {
-    themeVariation = themedClass(theme, styles, 'Heading');
+    classes = themedClass(theme, styles, 'Heading');
   } else {
-    themeVariation = themedClass(inverseTheme(theme), styles, 'Heading');
+    classes = themedClass(inverseTheme(theme), styles, 'Heading');
   }
 
   const caseVariation = styles.Capitalize;
 
-  const classes = () => {
-    let classNames = styles.Heading;
-    if (themeVariation) {
-      classNames += ` ${themeVariation}`;
-    }
-    if (capitalize) {
-      classNames += ` ${caseVariation}`;
-    }
-    return classNames;
-  };
+  if (capitalize) {
+    classes += ` ${caseVariation}`;
+  }
 
-  return <h3 className={classes()}>{children}</h3>;
+  return <h3 className={classes}>{children}</h3>;
 };

@@ -11,7 +11,7 @@ export default ({ props }) => {
       <div className={styles.Breadcrumbs}>
         <div className={styles.TopSection}>
           <div>
-            <Link to='/' autoWidth>
+            <Link to='/'>
               <Title>{content.header.title}</Title>
             </Link>
           </div>

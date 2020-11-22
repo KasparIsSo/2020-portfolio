@@ -4,43 +4,104 @@
   },
   "sections": [
     {
-      "title": "Overview",
       "sectionType": "primaryCallout",
-      "layout": "split",
       "blocks": [
         {
           "type": "image",
           "subtype": "callout",
-          "url": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-          "altText": "MACS website UI displayed across three different layouts"
+          "content": {
+            "imageUrl": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "altText": "MACS website UI displayed across three different layouts"
+          }
         },
         {
           "type": "split",
           "subtype": "primary",
-          "content": [
-            {
-              "title": "Overview",
-              "content": "I was approached with an opportunity to design and build a university doctoral program website. To my surprise, there was no visual guidelines that I had to adhere to. Furthermore I was explicitly asked to make it look modern and as exciting as the clients were about this new program"
-            }
-          ]
+          "content": {
+            "title": "Overview",
+            "content": "I was approached with an opportunity to design and build a university doctoral program website. To my surprise, there was no visual guidelines that I had to adhere to. Furthermore I was explicitly asked to make it look modern and as exciting as the clients were about this new program"
+          }
         },
         {
           "type": "split",
           "subtype": "secondary",
-          "content": [
-            {
-              "title": "Role",
-              "content": "Frontend Developer Intern"
-            },
-            {
-              "title": "Duration",
-              "content": "May - August 2018"
-            },
-            {
-              "title": "Tools",
-              "content": "HTML, CSS, JS, Ruby on Rails, Node.js, GitHub"
-            }
-          ]
+          "content": {
+            "metadata": [
+              {
+                "title": "Role",
+                "content": "Frontend Developer Intern"
+              },
+              {
+                "title": "Duration",
+                "content": "May - August 2018"
+              },
+              {
+                "title": "Tools",
+                "content": "HTML, CSS, JS, Ruby on Rails, Node.js, GitHub"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionType": "primaryContent",
+      "blocks": [
+        {
+          "type": "text",
+          "subtype": "full",
+          "content": {
+            "title": "Problem",
+            "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
+        },
+        {
+          "type": "text",
+          "subtype": "full",
+          "content": {
+            "title": "Research",
+            "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
+        },
+        {
+          "type": "list",
+          "subtype": "full",
+          "content": {
+            "title": "Goals",
+            "lists": [
+              {
+                "title": "Technical",
+                "list": [
+                  "Design a website that highlights the work the program and its faculty do",
+                  "Make the website beautiful yet simple in terms of usability",
+                  "Create a site that is consistent throughout all device sizes",
+                  "Make the content easily editable from the site maintainers side",
+                  "Complete the site as quickly as possible, though given until the end of the year"
+                ]
+              },
+              {
+                "title": "Personal",
+                "list": [
+                  "Prioritize clear communication",
+                  "Write clear code through verbose naming via BEM",
+                  "Become more proficient in WordPress (with previous experience limited to editing content and installing plugins)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sectionType": "secondaryContent",
+      "blocks": [
+        {
+          "type": "text",
+          "subtype": "full",
+          "content": {
+            "title": "Branding",
+            "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
         }
       ]
     }

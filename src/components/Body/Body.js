@@ -4,15 +4,23 @@ import * as styles from './Body.module.scss';
 
 export default ({ children, primary, inverse = false }) => {
   const { theme } = useContext(ThemeContext);
-  let themeVariation;
+  let classes;
 
   if (!inverse) {
-    themeVariation = themedClass(theme, styles, 'Body');
+    classes = fontClass(
+      primary ? 'primary' : 'secondary',
+      styles,
+      'Body',
+      themedClass(theme, styles, 'Body')
+    );
   } else {
-    themeVariation = themedClass(inverseTheme(theme), styles, 'Body');
+    classes = fontClass(
+      primary ? 'primary' : 'secondary',
+      styles,
+      'Body',
+      themedClass(inverseTheme(theme), styles, 'Body')
+    );
   }
-  const fontVariation = primary ? null : fontClass('secondary', styles, 'Body');
-  const classes = `${styles.Body} ${themeVariation} ${fontVariation}`;
 
   return <p className={classes}>{children}</p>;
 };

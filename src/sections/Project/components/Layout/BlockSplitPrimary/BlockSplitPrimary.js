@@ -4,18 +4,18 @@ import { Heading, Body } from 'components';
 import * as styles from './BlockSplitPrimary.module.scss';
 
 export default ({ content }) => {
-  return <div className={styles.BlockSplitPrimary}>{blockMarkup(content)}</div>;
+  return (
+    <section className={styles.BlockSplitPrimary}>{blockMarkup()}</section>
+  );
 
-  function blockMarkup(contentArray) {
-    return contentArray.map((contentItem) => {
-      return (
-        <div className={styles.Block}>
-          <Heading capitalize inverse>
-            {contentItem.title}
-          </Heading>
-          <Body inverse>{contentItem.content}</Body>
-        </div>
-      );
-    });
+  function blockMarkup() {
+    return (
+      <div className={styles.Block}>
+        <Heading capitalize inverse>
+          {content.title}
+        </Heading>
+        <Body inverse>{content.content}</Body>
+      </div>
+    );
   }
 };

@@ -17,7 +17,7 @@ export default ({ sections, rows }) => {
   function createNavItems(sections) {
     return sections.map((section, index) => (
       <li key={index}>
-        <Link href={`#${section}`} autoWidth nav>
+        <Link href={`#${section}`} nav>
           <Title>{section}</Title>
         </Link>
       </li>

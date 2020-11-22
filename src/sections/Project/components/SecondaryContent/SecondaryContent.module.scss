@@ -1,0 +1,11 @@
+@import 'styles.scss';
+
+.SecondaryContent {
+  @include grid-primary-section;
+  padding-top: spacing();
+  padding-bottom: spacing(extra-loose);
+
+  @include dark {
+    background: color(background-secondary, dark);
+  }
+}

@@ -13,4 +13,6 @@ export const sectionEnum = {
   CALLOUT_PRIMARY: 'primaryCallout',
   CALLOUT_CLOSING: 'closingCallout',
   CONTENT: 'content',
+  CONTENT_PRIMARY: 'primaryContent',
+  CONTENT_SECONDARY: 'secondaryContent',
 };

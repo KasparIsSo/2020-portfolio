@@ -5,7 +5,9 @@ import * as styles from './BlockSplitSecondary.module.scss';
 
 export default ({ content }) => {
   return (
-    <div className={styles.BlockSplitSecondary}>{blockMarkup(content)}</div>
+    <section className={styles.BlockSplitSecondary}>
+      {blockMarkup(content.metadata)}
+    </section>
   );
 
   function blockMarkup(contentArray) {

@@ -14,20 +14,13 @@ export default function App() {
   const { theme, mountedComponent } = useDarkMode();
   const [themeMode, setThemeMode] = useState(theme);
 
-  const appWrapperClasses = () => {
-    const themeVariation = themedClass(themeMode, styles, 'AppWrapper');
-    let classNames = styles.AppWrapper;
-    if (themeVariation) {
-      classNames += ` ${themeVariation}`;
-    }
-    return classNames;
-  };
+  const appWrapperClasses = themedClass(themeMode, styles, 'AppWrapper');
 
   if (!mountedComponent) return <div />;
 
   return (
     <ThemeProvider value={{ theme: themeMode, setTheme: setThemeMode }}>
-      <div className={appWrapperClasses()}>
+      <div className={appWrapperClasses}>
         <Router>
           <Switch>
             <Route exact path='/'>

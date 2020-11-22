@@ -1,9 +1,9 @@
 export default (theme, styles, className) => {
   if (theme === 'light') {
-    return null;
+    return `${styles[className]}`;
   }
 
   const darkClassName = className + '__dark';
 
-  return `${styles[darkClassName]}`;
+  return `${styles[className]} ${styles[darkClassName]}`;
 };

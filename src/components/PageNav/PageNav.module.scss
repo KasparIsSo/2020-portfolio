@@ -2,6 +2,8 @@
 
 .PageNav {
   grid-column: span 3;
+  z-index: $z-index-front;
+
   @media screen and (max-width: breakpoint(tablet)) {
     grid-column: span 2;
   }

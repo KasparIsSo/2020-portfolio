@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { CalloutPrimary } from '../components';
+import {
+  CalloutPrimary,
+  PrimaryContent,
+  SecondaryContent,
+} from '../components';
 import { sectionEnum } from '../enums';
 
 export function SectionMapper({ section }) {
@@ -12,6 +16,10 @@ export function SectionMapper({ section }) {
     switch (sectionType) {
       case sectionEnum.CALLOUT_PRIMARY:
         return CalloutPrimary;
+      case sectionEnum.CONTENT_PRIMARY:
+        return PrimaryContent;
+      case sectionEnum.CONTENT_SECONDARY:
+        return SecondaryContent;
       default:
         break;
     }

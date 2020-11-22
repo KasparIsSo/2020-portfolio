@@ -9,6 +9,10 @@ $breakpoint: (
 @function breakpoint($variant: desktop) {
   $fetched-value: map-get($breakpoint, $variant);
 
+  @if (type-of($variant) == number) {
+    $fetched-value: $variant;
+  }
+
   @if type-of($fetched-value) == number {
     @return $fetched-value * 1px;
   } @else {

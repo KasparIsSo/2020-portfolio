@@ -1,0 +1,79 @@
+@import 'styles.scss';
+
+@function leftPsuedoWidth($totalColumns, $leftOverColumns: 0, $maxWidth: null) {
+  $result: spacing();
+  @if (type-of($maxWidth) == number) {
+    $maxWidth: rem($maxWidth);
+    @if $totalColumns != 4 {
+      $pageSpacing: ($totalColumns - 1) * spacing();
+      $result: calc(
+        #{$leftOverColumns +
+          1} *
+          calc(
+            calc(#{$maxWidth} - #{$pageSpacing}) /
+              #{$totalColumns} +
+              #{spacing()}
+          )
+      );
+    }
+  } @else {
+    $maxWidth: 100vw;
+    @if $totalColumns != 4 {
+      $pageSpacing: 2 * spacing(extra-loose) + ($totalColumns - 1) * spacing();
+      $result: calc(
+        #{$leftOverColumns +
+          1} *
+          calc(
+            calc(#{$maxWidth} - #{$pageSpacing}) /
+              #{$totalColumns} +
+              #{spacing()}
+          )
+      );
+    }
+  }
+
+  @return $result;
+}
+
+.PrimaryContent {
+  @include grid-primary-section;
+  background: color(background-secondary);
+  padding-top: spacing(extra-large) + spacing();
+  padding-bottom: spacing(extra-large);
+  margin-top: -1 * spacing(extra-large);
+  position: relative;
+  z-index: $z-index-behind;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: color(background-secondary);
+
+    left: calc(-1 * #{leftPsuedoWidth(12, 3, $desktop-max-width)});
+    width: #{leftPsuedoWidth(12, 3, $desktop-max-width)};
+
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, extra-loose))) {
+      left: calc(-1 * (#{leftPsuedoWidth(12, 3)}));
+      width: #{leftPsuedoWidth(12, 3)};
+    }
+
+    @media screen and (max-width: breakpoint(tablet)) {
+      left: calc(-1 * (#{leftPsuedoWidth(8, 2)}));
+      width: #{leftPsuedoWidth(8, 2)};
+    }
+
+    @media screen and (max-width: breakpoint(mobile)) {
+      left: -1 * spacing();
+      width: spacing();
+    }
+  }
+
+  @include dark {
+    background: color(background-secondary, dark);
+    &:before {
+      background: color(background-secondary, dark);
+    }
+  }
+}

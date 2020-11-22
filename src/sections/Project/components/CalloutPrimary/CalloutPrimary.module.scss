@@ -1,8 +1,25 @@
 @import 'styles.scss';
 
-@function leftPsuedoWidth($size) {
-  $result: rem($size) - 11 * spacing();
-  $result: $result / 11;
+@function leftPsuedoWidth($totalColumns, $maxWidth: null) {
+  $result: spacing();
+  @if (type-of($maxWidth) == number) {
+    $maxWidth: rem($maxWidth);
+    @if $totalColumns != 4 {
+      $pageSpacing: ($totalColumns - 1) * spacing();
+      $result: calc(
+        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{spacing()}
+      );
+    }
+  } @else {
+    $maxWidth: 100vw;
+    @if $totalColumns != 4 {
+      $pageSpacing: 2 * spacing(extra-loose) + ($totalColumns - 1) * spacing();
+      $result: calc(
+        calc(#{$maxWidth} - #{$pageSpacing}) / #{$totalColumns} + #{spacing()}
+      );
+    }
+  }
+
   @return $result;
 }
 
@@ -13,23 +30,25 @@
   padding-bottom: spacing(extra-loose);
   margin-top: calc(60% - #{spacing(extra-large)});
   position: relative;
+  z-index: $z-index-forward;
 
   &:before {
     content: '';
     position: absolute;
     top: 0;
-    left: -1 * (leftPsuedoWidth($desktop-max-width) + spacing());
     height: 100%;
-    width: leftPsuedoWidth($desktop-max-width) + spacing();
+    left: calc(-1 * (#{leftPsuedoWidth(12, $desktop-max-width)}));
+    width: #{leftPsuedoWidth(12, $desktop-max-width)};
     background: color(background-inverse);
+
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, extra-loose))) {
+      left: calc(-1 * (#{leftPsuedoWidth(12)}));
+      width: #{leftPsuedoWidth(12)};
+    }
 
     @media screen and (max-width: breakpoint(tablet)) {
       left: -1 * spacing();
       width: spacing();
-    }
-
-    @media screen and (max-width: breakpoint(mobile)) {
-      display: none;
     }
   }
 
@@ -37,9 +56,22 @@
     content: '';
     position: absolute;
     top: 0;
-    right: calc((100vw - #{rem($desktop-max-width)}) * -0.5);
     height: 100%;
-    width: calc((100vw - #{rem($desktop-max-width)}) * 0.5);
     background: color(background-inverse);
+    right: calc(-0.5 * (100vw - #{$desktop-max-width * 1px}));
+    width: calc(0.5 * (100vw - #{$desktop-max-width * 1px}));
+
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, extra-loose))) {
+      right: -1 * spacing();
+      width: spacing();
+    }
+  }
+
+  @include dark {
+    background: color(background-primary);
+    &:before,
+    &:after {
+      background: color(background-primary);
+    }
   }
 }

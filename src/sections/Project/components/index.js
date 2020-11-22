@@ -1,4 +1,6 @@
 export { CalloutPrimary } from './CalloutPrimary';
+export { PrimaryContent } from './PrimaryContent';
+export { SecondaryContent } from './SecondaryContent';
 export {
   BlockImageCallout,
   BlockImageFull,
