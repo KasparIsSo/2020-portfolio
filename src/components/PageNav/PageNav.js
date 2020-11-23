@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, Title } from 'components';
 import * as styles from './PageNav.module.scss';
 
-export default ({ sections, rows }) => {
+export default React.memo(({ sections, rows }) => {
   return (
     <div className={styles.PageNav} style={{ gridRow: 'span ' + rows }}>
       <nav className={styles.Nav}>{createNavList(sections)}</nav>
@@ -23,4 +23,4 @@ export default ({ sections, rows }) => {
       </li>
     ));
   }
-};
+});

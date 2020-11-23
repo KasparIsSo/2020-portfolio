@@ -2,8 +2,7 @@
 
 .FullWidthContentWrapper {
   @include grid-primary-section;
-  position: relative;
-  width: 100%;
+  z-index: $z-index-middle;
 }
 
 @function oneColumnWidth($totalColumns, $maxWidth: null, $withSpacing: true) {
@@ -25,40 +24,85 @@
 
 @function leftShift($totalColumns, $leftOverColumns: 0, $maxWidth: null) {
   $result: $appSpacing;
-  @if (type-of($maxWidth) == number) {
-    @if $totalColumns != 4 {
-      $result: calc(
-        #{$leftOverColumns + 1} * #{oneColumnWidth($totalColumns, $maxWidth)}
-      );
-    }
-  } @else {
-    @if $totalColumns != 4 {
-      $result: calc(
-        #{$leftOverColumns} * #{oneColumnWidth($totalColumns, $maxWidth)}
-      );
-    }
+  @if $totalColumns != 4 {
+    $result: calc(
+      #{$leftOverColumns} * #{oneColumnWidth($totalColumns, $maxWidth)}
+    );
   }
 
   @return $result;
 }
 
 .FullWidthContent {
-  position: absolute;
-  left: calc(-1 * #{leftShift(12, 3, $desktop-max-width)});
+  position: relative;
+  margin-left: calc(
+    -1 * (#{leftShift(12, 3, $desktop-max-width)} + #{oneColumnWidth(
+            12,
+            $desktop-max-width
+          )})
+  );
+  max-width: 100vw;
   width: calc(
     #{rem($desktop-max-width)} + 2 * #{oneColumnWidth(12, $desktop-max-width)}
   );
 
+  @media screen and (max-width: breakpoint(desktop-small)) {
+    margin-left: calc(
+      -1 * ((#{leftShift(12, 3, $desktop-max-width)}) + #{$appSpacing})
+    );
+    width: calc(#{$desktop-max-width * 1px} + #{2 * $appSpacing});
+  }
+
   @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, base))) {
-    left: calc(-1 * (#{leftShift(12, 3)} + #{$appSpacing}));
+    margin-left: calc(-1 * (#{leftShift(12, 3)} + #{$appSpacing}));
     width: 100vw;
   }
 
   @media screen and (max-width: breakpoint(tablet)) {
-    left: calc(-1 * (#{leftShift(8, 2)}+ #{$appSpacing}));
+    margin-left: calc(-1 * (#{leftShift(8, 2)} + #{$appSpacing}));
   }
 
   @media screen and (max-width: breakpoint(mobile)) {
-    left: calc(-1 * #{$appSpacing});
+    margin-left: calc(-1 * #{$appSpacing});
+  }
+
+  .NavBackgroundWrapper {
+    position: absolute;
+    width: calc(
+      2.5 * #{oneColumnWidth(12, $desktop-max-width)} + 2 * #{$gridGap}
+    );
+    height: 100%;
+    top: 0px;
+    clip: rect(0, auto, auto, 0);
+    z-index: $z-index-forward;
+
+    @media screen and (max-width: breakpoint(desktop-small)) {
+      width: calc(1.5 * #{oneColumnWidth(12)} + 3 * #{$gridGap});
+    }
+
+    @media screen and (max-width: breakpoint($desktop-max-width + 2 * map-get($spacing, base))) {
+      width: calc(2 * #{oneColumnWidth(12)} + 3 * #{$gridGap});
+    }
+
+    @media screen and (max-width: breakpoint(mobile)) {
+      display: none;
+    }
+  }
+
+  .NavBackground {
+    position: fixed;
+    top: $gridGap;
+    margin-left: calc(#{oneColumnWidth(12, $desktop-max-width)} - #{$gridGap});
+    width: 100%;
+    height: rem(260);
+    background: color(background-primary);
+
+    @include dark {
+      background: color(background-primary, dark);
+    }
+
+    @media screen and (max-width: breakpoint(desktop-small)) {
+      margin-left: 0;
+    }
   }
 }

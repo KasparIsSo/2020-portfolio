@@ -134,6 +134,61 @@
           }
         }
       ]
+    },
+    {
+      "sectionType": "primaryContent",
+      "blocks": [
+        {
+          "type": "text",
+          "subtype": "full",
+          "content": {
+            "title": "Problem",
+            "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
+        },
+        {
+          "type": "text",
+          "subtype": "full",
+          "content": {
+            "title": "Research",
+            "content": "With university program websites being developed independently with little to no brand / design guidelines, the lack of consistency meant I had creative control but also no clear direction. With a lack of clarity in what MACS wanted visually, it was clear that I needed to learn more about their target audience as well as their goals with the outcome of the website."
+          }
+        },
+        {
+          "type": "quote",
+          "subtype": "full",
+          "content": {
+            "content": "“Students want the important information as fast as possible.”"
+          }
+        },
+        {
+          "type": "list",
+          "subtype": "full",
+          "content": {
+            "title": "Goals",
+            "lists": [
+              {
+                "title": "Technical",
+                "list": [
+                  "Design a website that highlights the work the program and its faculty do",
+                  "Make the website beautiful yet simple in terms of usability",
+                  "Create a site that is consistent throughout all device sizes",
+                  "Make the content easily editable from the site maintainers side",
+                  "Complete the site as quickly as possible, though given until the end of the year"
+                ]
+              },
+              {
+                "title": "Personal",
+                "list": [
+                  "Prioritize clear communication",
+                  "Write clear code through verbose naming via BEM",
+                  "Become more proficient in WordPress (with previous experience limited to editing content and installing plugins)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

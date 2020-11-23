@@ -7,7 +7,6 @@
   padding: spacing(extra-loose) 0;
 
   @media screen and (max-width: breakpoint(tablet)) {
-    max-width: rem($tablet-max-width);
     padding: spacing(extra-loose) 0;
   }
 
