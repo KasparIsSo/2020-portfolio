@@ -5,7 +5,12 @@ import {
   Route,
   useRouteMatch,
 } from 'react-router-dom';
-import { themedClass, ThemeProvider, useDarkMode } from 'utilities';
+import {
+  ScrollToTop,
+  themedClass,
+  ThemeProvider,
+  useDarkMode,
+} from 'utilities';
 import { Home, Project } from 'sections';
 
 import * as styles from './App.module.scss';
@@ -22,6 +27,7 @@ export default function App() {
     <ThemeProvider value={{ theme: themeMode, setTheme: setThemeMode }}>
       <div className={appWrapperClasses}>
         <Router>
+          <ScrollToTop />
           <Switch>
             <Route exact path='/'>
               <Home />
